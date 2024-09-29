@@ -1,35 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Page</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inception - Movie Watchlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .movie-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+        }
+        .movie-poster {
+            flex: 0 0 300px;
+        }
+        .movie-poster img {
+            width: 100%;
+            height: auto;
+        }
+        .movie-info {
+            flex: 1;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+        .movie-meta {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .movie-description {
+            line-height: 1.6;
+        }
+        .rating {
+            font-size: 24px;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-  <div class="movie-container">
-    <div class="movie-poster">
-      <img src="movie-poster.jpg" alt="Movie Poster">
+    <div class="container">
+        <div class="movie-card">
+            <div class="movie-poster">
+                <img src="movie-poster.jpg" alt="Inception movie poster">
+            </div>
+            <div class="movie-info">
+                <h1>Inception</h1>
+                <div class="movie-meta">
+                    <span>2010</span> | <span>Action, Sci-Fi, Thriller</span> | <span>148 min</span>
+                </div>
+                <div class="rating">★★★★☆</div>
+                <p class="movie-description">
+                    A thief who enters the dreams of others to steal secrets from their subconscious is offered a chance to regain his old life in exchange for a task considered to be impossible: "inception", the implantation of another person's idea into a target's subconscious.
+                </p>
+                <p><strong>Director:</strong> Christopher Nolan</p>
+                <p><strong>Stars:</strong> Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page</p>
+                <a href="#" class="btn">Add to Watchlist</a>
+            </div>
+        </div>
     </div>
-    <div class="movie-details">
-      <h1 class="movie-title">Movie Title</h1>
-      <div class="movie-info">
-        <span class="movie-genre">Action, Adventure</span> |
-        <span class="release-date">September 29, 2024</span>
-      </div>
-      <p class="movie-description">
-        A thrilling adventure that follows the journey of a group of unlikely heroes as they band together to save the world from an ancient evil.
-      </p>
-      
-      <h3>Cast</h3>
-      <ul class="cast-list">
-        <li><span>Actor 1</span> as Character 1</li>
-        <li><span>Actor 2</span> as Character 2</li>
-        <li><span>Actor 3</span> as Character 3</li>
-      </ul>
-
-      <button class="add-to-watchlist">Add to Watchlist</button>
-    </div>
-  </div>
 </body>
 </html>
