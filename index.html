@@ -3,87 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inception - Movie Watchlist</title>
+    <title>Ready Player One - Movie Watchlist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+            --card-background: #ffffff;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
         .movie-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-background);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             display: flex;
+            flex-direction: column;
         }
-        .movie-poster {
-            flex: 0 0 300px;
+        .movie-header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
         }
-        .movie-poster img {
+        .movie-header img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .movie-header:hover img {
+            transform: scale(1.05);
+        }
+        .movie-title-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+        }
+        .movie-title-overlay h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .movie-info {
-            flex: 1;
-            padding: 20px;
-        }
-        h1 {
-            margin-top: 0;
-            color: #333;
+            padding: 30px;
         }
         .movie-meta {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        .movie-description {
-            line-height: 1.6;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #7f8c8d;
         }
         .rating {
             font-size: 24px;
-            color: #ffd700;
-            margin-bottom: 15px;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+        .movie-description {
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .movie-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .detail-item {
+            background-color: #f7f9fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .detail-item h3 {
+            margin-top: 0;
+            color: var(--primary-color);
         }
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn i {
+            margin-right: 8px;
+        }
+        @media (max-width: 768px) {
+            .movie-header {
+                height: 300px;
+            }
+            .movie-title-overlay h1 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="movie-card">
-            <div class="movie-poster">
-                <img src="movie-poster.jpg" alt="Inception movie poster">
+            <div class="movie-header">
+                <img src="movie-poster.jpg" alt="Ready Player One movie poster">
+                <div class="movie-title-overlay">
+                    <h1>Ready Player One</h1>
+                </div>
             </div>
             <div class="movie-info">
-                <h1>Inception</h1>
                 <div class="movie-meta">
-                    <span>2010</span> | <span>Action, Sci-Fi, Thriller</span> | <span>148 min</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2018</span>
+                    <span><i class="fas fa-film"></i> Action, Sci-Fi, Adventure</span>
+                    <span><i class="fas fa-clock"></i> 140 min</span>
                 </div>
-                <div class="rating">★★★★☆</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span style="color: var(--text-color); margin-left: 10px;">4.0/5</span>
+                </div>
                 <p class="movie-description">
-                    A thief who enters the dreams of others to steal secrets from their subconscious is offered a chance to regain his old life in exchange for a task considered to be impossible: "inception", the implantation of another person's idea into a target's subconscious.
+                    In 2045, the planet is on the brink of chaos and collapse, but people find salvation in the OASIS: an expansive virtual reality universe created by James Halliday. When Halliday dies, he promises his immense fortune to the first person to discover a digital Easter egg that's hidden somewhere in the OASIS. Wade Watts joins the contest and finds himself in a reality-bending treasure hunt through a fantastical world of mystery, discovery and danger.
                 </p>
-                <p><strong>Director:</strong> Christopher Nolan</p>
-                <p><strong>Stars:</strong> Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page</p>
-                <a href="#" class="btn">Add to Watchlist</a>
+                <div class="movie-details">
+                    <div class="detail-item">
+                        <h3>Director</h3>
+                        <p>Steven Spielberg</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Stars</h3>
+                        <p>Tye Sheridan, Olivia Cooke, Ben Mendelsohn</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Based on</h3>
+                        <p>Novel by Ernest Cline</p>
+                    </div>
+                </div>
+                <a href="#" class="btn"><i class="fas fa-plus"></i> Add to Watchlist</a>
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const btn = document.querySelector('.btn');
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.innerHTML = '<i class="fas fa-check"></i> Added to Watchlist';
+                this.style.backgroundColor = 'var(--secondary-color)';
+            });
+        });
+    </script>
 </body>
 </html>
