@@ -1,3 +1,4 @@
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -5,47 +6,63 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .movie-container {
   display: flex;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: auto;
+  flex-wrap: wrap;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
 }
 
 .movie-poster img {
-  width: 250px;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
+  object-fit: cover;
+}
+
+.movie-poster {
+  flex: 1;
+  min-width: 300px;
 }
 
 .movie-details {
-  margin-left: 20px;
-  flex: 1;
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .movie-title {
   font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
   margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
-.movie-genre, .release-date {
+.movie-info {
   font-size: 1.1rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  color: #f39c12;
 }
 
 .movie-description {
-  margin: 15px 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
 .cast-list {
@@ -53,17 +70,45 @@ body {
   margin-bottom: 20px;
 }
 
+.cast-list li {
+  margin-bottom: 5px;
+}
+
+.cast-list li span {
+  font-weight: bold;
+  color: #f39c12;
+}
+
 .add-to-watchlist {
-  background-color: #ff4b2b;
+  align-self: flex-start;
+  background-color: #e74c3c;
   color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  border-radius: 5px;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
 }
 
 .add-to-watchlist:hover {
-  background-color: #ff2a1b;
+  background-color: #c0392b;
+  box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
+}
+
+@media (max-width: 768px) {
+  .movie-container {
+    flex-direction: column;
+  }
+
+  .movie-poster img {
+    width: 100%;
+    height: auto;
+  }
+
+  .movie-details {
+    padding: 15px;
+  }
 }
