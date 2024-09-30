@@ -6,105 +6,97 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
-  padding: 50px;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
 }
 
 .movie-container {
   display: flex;
-  background-color: #161b22;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-  max-width: 1000px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  max-width: 900px;
   width: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .movie-container:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-.movie-poster img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px 0 0 20px;
+  transform: translateY(-5px);
 }
 
 .movie-poster {
   flex: 1;
-  min-width: 350px;
-  max-height: 100%;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .movie-details {
   flex: 2;
-  padding: 40px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .movie-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #f0f6fc;
-  margin-bottom: 15px;
+  color: #ffcc00;
+  margin-bottom: 10px;
 }
 
 .movie-info {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-  color: #8b949e;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 15px;
 }
 
 .movie-description {
   font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 30px;
-  color: #c9d1d9;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
 .cast-list {
   list-style: none;
-  margin-bottom: 25px;
   padding-left: 0;
+  margin-bottom: 25px;
 }
 
 .cast-list li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .cast-list li span {
   font-weight: bold;
-  color: #f39c12;
+  color: #ffcc00;
 }
 
 .add-to-watchlist {
-  align-self: flex-start;
-  background-color: #238636;
-  color: #ffffff;
+  background-color: #28a745;
+  color: #fff;
   border: none;
-  padding: 14px 40px;
+  padding: 15px 25px;
   font-size: 1.2rem;
   font-weight: bold;
-  border-radius: 30px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 8px 15px rgba(35, 134, 54, 0.4);
+  transition: background-color 0.3s ease;
 }
 
 .add-to-watchlist:hover {
-  background-color: #2ea043;
-  box-shadow: 0 10px 20px rgba(46, 160, 67, 0.6);
+  background-color: #218838;
 }
 
 @media (max-width: 768px) {
@@ -112,18 +104,7 @@ body {
     flex-direction: column;
   }
 
-  .movie-poster img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px 20px 0 0;
-  }
-
   .movie-details {
     padding: 20px;
-  }
-
-  .add-to-watchlist {
-    width: 100%;
-    text-align: center;
   }
 }
